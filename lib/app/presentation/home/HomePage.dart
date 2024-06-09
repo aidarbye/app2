@@ -189,7 +189,7 @@ class _HomePage extends State<HomePage> {
                       assetPath: "assets/images/calendar.png",
                       callback: () {
                         _changePage(CalendarPage(
-                          index: babyindex,
+                          index: (((babyindex ?? 0) - 1) > 0) ? ((babyindex ?? 0) - 1) : 0,
                         ));
                       },
                     ),

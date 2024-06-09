@@ -57,11 +57,11 @@ class _DoctorPage extends State<DoctorPage> {
 
     isEnabled = true;
 
-    if (curDay == 1 || curDay == 2) {
-      isEnabled = false;
-    } else {
-      isEnabled = true;
-    }
+    // if (curDay == 1 || curDay == 2) {
+    //   isEnabled = false;
+    // } else {
+    //   isEnabled = true;
+    // }
 
     if (curDay == 1) {
       _days = ["ПН", "ВТ", "СР", "ЧТ", "ПТ",];
@@ -446,59 +446,69 @@ class SuccessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
-      child: Container(
-        margin: const EdgeInsets.only(top: 200,bottom: 200,left: 20,right: 20),
-        padding: const EdgeInsets.only(top: 50,bottom: 50,left: 20,right: 20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20)
+      child: AlertDialog(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              "assets/images/sucpic.png"
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Вы успешно записались",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600
+        
+        backgroundColor: Colors.white,
+        shadowColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        // color: Colors.transparent,
+        content: Padding(
+          // margin: const EdgeInsets.only(top: 200,bottom: 200,left: 20,right: 20),
+          padding: const EdgeInsets.only(top: 30,bottom: 20,left: 20,right: 20),
+          // decoration: BoxDecoration(
+          //   color: Colors.white,
+          //   borderRadius: BorderRadius.circular(20)
+          // ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                "assets/images/sucpic.png"
               ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Вы успешно записались на прием, для подробной информации просмотрите вкладку записи",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 30),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).pop(true);
-              },
-              child: Container(
-                width: 200,
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                decoration: BoxDecoration(
-                  color: const Color(0xffF97E86),
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                child: const Center(
-                  child: Text("Продолжить",style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),),
+              const SizedBox(height: 20),
+              const Text(
+                "Вы успешно записались",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600
                 ),
               ),
-            )
-          ],
+              const SizedBox(height: 20),
+              const Text(
+                "Вы успешно записались на прием, для подробной информации просмотрите вкладку записи",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop(true);
+                },
+                child: Container(
+                  width: 200,
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                    color: const Color(0xffF97E86),
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: const Center(
+                    child: Text("Продолжить",style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600
+                    ),),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
