@@ -1,0 +1,6 @@
+package kz.iitu.medimom
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
